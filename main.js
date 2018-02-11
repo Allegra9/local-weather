@@ -49,7 +49,6 @@ $("#fahrenheit").click(function(){
 });
 
 
-
 //wind speed:
 
 $("#windSpeed").click(function(){
@@ -63,35 +62,36 @@ $("#mphWind").click(function(){
 });
 
 
-
 //background image changes with the Weather Type:
 
 //rain - daytime
-if (weatherType = "rain"){
+if (weatherType === "rain"){
 
     $("body").css("background-image", "url(https://source.unsplash.com/v3UZKbMaTGk/1300x1700)");
-    $(".weather-data").css("background-color", "white");
-    $(".weather-data").css("opacity", "0.8");
-    $(".weather-data").css("border-radius", "10px");
-    $(".weather-data").css("margin", "0 10% 0 10%");
+    $(".weather-data").css({"background-color":"white", "opacity": "0.8", "border-radius": "10px", 
+      "margin": "0 10% 0 10%"});
+    // $(".weather-data").css("opacity", "0.8");
+    // $(".weather-data").css("border-radius", "10px");
+    // $(".weather-data").css("margin", "0 10% 0 10%");
 
-//clear - red evening sky
-}else if (weatherType = "clear"){
+//clear - london eye
+}else if (weatherType === "clear sky"){
 
-    $("body").css("background-image", "url(https://source.unsplash.com/9AhjM128cy0/1500x1700)");
+    $("body").css("background-image", "url(https://source.unsplash.com/mAtmJMGFpjo/1500x1700)");
+    $(".weather-data").css({"background-color":"white", "opacity": "0.7", "border-radius": "10px", 
+      "margin": "0 10% 0 10%"});
 
 //sunny - sunny big ben
-}else if (weatherType = "sunny"){
+}else if (weatherType === "sunny"){
 
     $("body").css("background-image", "url(https://source.unsplash.com/1Z7QDZqT2QQ/1500x1700)");
 
-//cloudy - evening nigth
-}else if (weatherType = "clouds"){
+//default - grey London 
+}else {
 
-    $("body").css("background-image", "url(https://source.unsplash.com/DpI-_wydgJM/1500x1700)");
-    $(".weather-data").css("color", "#d6b419");
+    $("body").css("background-image", "url(https://source.unsplash.com/xnKJ1mJ9-_w/1500x1700)");
 
-}
+};
 
 
 
