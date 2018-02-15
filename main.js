@@ -65,7 +65,7 @@ $("#mphWind").click(function(){
 //background image changes with the Weather Type:
 
 //rain - daytime
-if (weatherType === "rain"){
+if (weatherType.includes("rain")) {
 
     $("body").css("background-image", "url(https://source.unsplash.com/v3UZKbMaTGk/1300x1700)");
     $(".weather-data").css({"background-color":"white", "opacity": "0.8", "border-radius": "10px", 
