@@ -74,16 +74,22 @@ if (weatherType.includes("rain")) {
     // $(".weather-data").css("border-radius", "10px");
     // $(".weather-data").css("margin", "0 10% 0 10%");
 
-//clear - london eye
+//snow - umbrella
+}else if (weatherType.includes("snow")){
+
+    $("body").css("background-image", "url(https://source.unsplash.com/SuJp8ZpkubI/1300x1700)");
+    $(".weather-data").css({"background-color":"white", "opacity": "0.8", "border-radius": "10px", 
+      "margin": "0 10% 0 10%"});
+
+//clear - st pauls w flowers
 }else if (weatherType === "clear sky"){
 
-    $("body").css("background-image", "url(https://source.unsplash.com/mAtmJMGFpjo/1500x1700)");
+    $("body").css("background-image", "url(https://source.unsplash.com/IVO6tozN6ZQ/1000x1400)");
     $(".weather-data").css({"background-color":"white", "opacity": "0.7", "border-radius": "10px", 
       "margin": "0 10% 0 10%"});
 
 //sunny - sunny big ben
 }else if (weatherType === "sunny"){
-
     $("body").css("background-image", "url(https://source.unsplash.com/1Z7QDZqT2QQ/1500x1700)");
 
 //default - grey London 
@@ -92,8 +98,6 @@ if (weatherType.includes("rain")) {
     $("body").css("background-image", "url(https://source.unsplash.com/xnKJ1mJ9-_w/1500x1700)");
 
 };
-
-
 
 
   });
@@ -116,7 +120,6 @@ function startTime() {
     var ampm = "";
     m = checkTime(m);
     
-
  document.getElementById('display').innerHTML = h+":"+m;
     var t = setTimeout(function(){startTime()},500);
 }
@@ -125,7 +128,6 @@ function checkTime(i) {
     if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
-
 
 //date
 function startDate() {
