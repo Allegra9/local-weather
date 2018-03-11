@@ -1,6 +1,5 @@
 
 $(document).ready(function(){ 
-
     
 var api = "https://fcc-weather-api.glitch.me/api/current?lat=51.5098&lon=-0.1180";
 //entered London's lat and lon here 
@@ -11,14 +10,12 @@ var api = "https://fcc-weather-api.glitch.me/api/current?lat=51.5098&lon=-0.1180
       var tempC = data.main.temp.toFixed(0);
       var windSpeed = data.wind.speed;
       var city = data.name;
-    
 
     //celcius to fahrenheit:
     fahrenheit = ((tempC) * (9/5) +32).toFixed(0);
 
     //m/s to mph formula:
     mphWind = (2.237 * windSpeed).toFixed(0);
-
 
 console.log(weatherType); //clear sky, mederate rain, light rain, drizzle rain,
 console.log(tempC); //6
@@ -33,8 +30,6 @@ $("#fahrenheit").html(fahrenheit + "° F");
 $("#windSpeed").html(windSpeed + " m/s");
 $("#mphWind").html(mphWind + " mph")
 
-
-
 //OMG - THIS IS AMAZING :
 //temperature
 
@@ -48,7 +43,6 @@ $("#fahrenheit").click(function(){
   $('#fahrenheit').hide();
 });
 
-
 //wind speed:
 
 $("#windSpeed").click(function(){
@@ -61,12 +55,10 @@ $("#mphWind").click(function(){
   $('#mphWind').hide();
 });
 
-
 //background image changes with the Weather Type:
 
 //rain - daytime
 if (weatherType.includes("rain")) {
-
     $("body").css("background-image", "url(https://source.unsplash.com/v3UZKbMaTGk/1300x1700)");
     $(".weather-data").css({"background-color":"white", "opacity": "0.8", "border-radius": "10px", 
       "margin": "0 10% 0 10%"});
@@ -76,14 +68,12 @@ if (weatherType.includes("rain")) {
 
 //snow - umbrella
 }else if (weatherType.includes("snow")){
-
     $("body").css("background-image", "url(https://source.unsplash.com/SuJp8ZpkubI/1300x1700)");
     $(".weather-data").css({"background-color":"white", "opacity": "0.8", "border-radius": "10px", 
       "margin": "0 10% 0 10%"});
 
 //clear - st pauls w flowers
 }else if (weatherType === "clear sky"){
-
     $("body").css("background-image", "url(https://source.unsplash.com/IVO6tozN6ZQ/1000x1400)");
     $(".weather-data").css({"background-color":"white", "opacity": "0.7", "border-radius": "10px", 
       "margin": "0 10% 0 10%"});
@@ -94,7 +84,6 @@ if (weatherType.includes("rain")) {
 
 //default - grey London 
 }else {
-
     $("body").css("background-image", "url(https://source.unsplash.com/xnKJ1mJ9-_w/1500x1700)");
 
 };
@@ -103,10 +92,6 @@ if (weatherType.includes("rain")) {
   });
 
 });
-
-
-
-
 
 //TIME & DATE FUNCTION
 //ADJUSTED DATE FORMAT TO DD/MM/YYYY
